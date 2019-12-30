@@ -365,8 +365,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 9e0583190c14df647a74a4ab9f0c56b8, type: 2}
   - {fileID: 11400000, guid: 8c59aac468c981047ba3bd9be7fdbf29, type: 2}
   - {fileID: 11400000, guid: 31d69828937d8ce4595461903687b13f, type: 2}
-  dotsWidth: 6
-  dotsHeight: 6
+  boardSize: {x: 4, y: 6}
 --- !u!4 &1039530456
 Transform:
   m_ObjectHideFlags: 0

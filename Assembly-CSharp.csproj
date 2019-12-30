@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\DotType.cs" />
     <Compile Include="Assets\Scripts\InitializeDot.cs" />
     <Compile Include="Assets\Scripts\LevelGenerator.cs" />
+    <Compile Include="Assets\Scripts\MoveDot.cs" />
     <Compile Include="Assets\Scripts\Rules\ColorRule.cs" />
     <Compile Include="Assets\Scripts\Rules\IRule.cs" />
     <Compile Include="Assets\Scripts\Rules\PositionalRule.cs" />

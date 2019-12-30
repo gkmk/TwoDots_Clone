@@ -8,6 +8,8 @@ public class DotChecker : MonoBehaviour
     List<GameObject> selectedDots;
     public LineRenderer connectedLines;
 
+
+
     private void Awake()
     {
         selectedDots = new List<GameObject>();
@@ -21,10 +23,11 @@ public class DotChecker : MonoBehaviour
         if (selectedDots.Count > 1) 
         foreach (GameObject item in selectedDots)
         {
-            Destroy(item);
+            item.SetActive(false);
+            //Destroy(item);
         }
         
-        Debug.Log("process selected dots");
+        LevelGenerator.UpdatePositions();
         selectedDots.Clear();
         connectedLines.positionCount = 0;
     }
