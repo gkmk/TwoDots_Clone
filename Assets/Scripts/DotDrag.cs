@@ -22,7 +22,6 @@ public class DotDrag : MonoBehaviour
     //  Select dot on drag
     private void OnMouseEnter()
     {
-        Debug.Log("ENTER");
         if (Input.GetMouseButton(0))
         {
             DotSelectedTrigger();
@@ -32,7 +31,6 @@ public class DotDrag : MonoBehaviour
     //  select dot on first input
     private void OnMouseDown()
     {
-        Debug.Log("KLIK");
         if (Input.GetMouseButton(0))
         {
             DotSelectedTrigger();
@@ -42,7 +40,6 @@ public class DotDrag : MonoBehaviour
     //  complete selection
     private void OnMouseUp()
     {
-        Debug.Log("should stop");
         SelectionComplete();
     }
 }

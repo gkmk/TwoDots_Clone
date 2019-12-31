@@ -8,8 +8,6 @@ public class DotChecker : MonoBehaviour
     List<GameObject> selectedDots;
     public LineRenderer connectedLines;
 
-
-
     private void Awake()
     {
         selectedDots = new List<GameObject>();
@@ -99,6 +97,7 @@ public class DotChecker : MonoBehaviour
 
     void UpdateLineRenderer()
     {
+        connectedLines.material.color = selectedDots[0].GetComponent<InitializeDot>().dotType.color; 
         connectedLines.positionCount = selectedDots.Count;
         int i = 0;
         foreach (GameObject dot in selectedDots)

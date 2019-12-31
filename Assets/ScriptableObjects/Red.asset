@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Red
   m_EditorClassIdentifier: 
   color: {r: 0.9843138, g: 0.32156864, b: 0.3803922, a: 1}
+  pointType: 1

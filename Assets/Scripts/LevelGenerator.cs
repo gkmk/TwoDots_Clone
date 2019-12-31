@@ -5,13 +5,10 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
     public GameObject dot;
-
     public DotType[] dotTypes;
-
-    protected static GameObject[,] boardDots;
-
     public Vector2 boardSize;
 
+    protected static GameObject[,] boardDots;
     static Vector2 _boardSize;
     static DotType[] _dotTypes;
 
@@ -23,12 +20,16 @@ public class LevelGenerator : MonoBehaviour
 
     public static void UpdatePositions()
     {
+        int points = 0;
+        PointType pt = PointType.None;
         for (int i = 0; i < _boardSize.y; i++)
         {
             for (int l = 0; l < _boardSize.x; l++)
             {
                 if (!boardDots[i,l].activeSelf)
                 {
+                    points++;
+                    pt = boardDots[i, l].GetComponent<InitializeDot>().dotType.pointType;
                     //  save the found dot
                     GameObject tempDot = boardDots[i, l];
                     
@@ -53,6 +54,7 @@ public class LevelGenerator : MonoBehaviour
                 }
             }
         }
+        if (pt != PointType.None) PointsManager.GetInstance().UpdatePoints(pt, points);
     }
 
     // Start is called before the first frame update
