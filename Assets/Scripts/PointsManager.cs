@@ -27,7 +27,7 @@ public class PointsManager : MonoBehaviour
         levelPoints = new Dictionary<PointType, int>();
     }
 
-    public void UpdatePoints(PointType pointType, int points)
+    public void UpdatePoints(PointType pointType, int points, int levelGoal)
     {
         if (levelPoints.ContainsKey(pointType))
         {
@@ -38,15 +38,18 @@ public class PointsManager : MonoBehaviour
         }
         if (pointType == PointType.Blue)
         {
-            uiPoints[0].text = levelPoints[pointType].ToString();
+            if (levelPoints[pointType] >= levelGoal) uiPoints[0].text = "Done";
+            else uiPoints[0].text = levelPoints[pointType].ToString() + "/" + levelGoal.ToString();
         }
         if (pointType == PointType.Red)
         {
-            uiPoints[1].text = levelPoints[pointType].ToString();
+            if (levelPoints[pointType] >= levelGoal) uiPoints[1].text = "Done";
+            else uiPoints[1].text = levelPoints[pointType].ToString() + "/" + levelGoal.ToString();
         }
         if (pointType == PointType.Yellow)
         {
-            uiPoints[2].text = levelPoints[pointType].ToString();
+            if (levelPoints[pointType] >= levelGoal) uiPoints[2].text = "Done";
+            else uiPoints[2].text = levelPoints[pointType].ToString() + "/" + levelGoal.ToString();
         }
     }
 }

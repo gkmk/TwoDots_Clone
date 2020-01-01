@@ -22,10 +22,9 @@ public class DotChecker : MonoBehaviour
         foreach (GameObject item in selectedDots)
         {
             item.SetActive(false);
-            //Destroy(item);
         }
-        
-        LevelGenerator.UpdatePositions();
+
+        LevelGenerator.GetInstance().UpdatePositions(connectedLines.loop ? selectedDots[0].GetComponent<InitializeDot>().dotType.pointType : PointType.None);
         selectedDots.Clear();
         connectedLines.positionCount = 0;
     }
